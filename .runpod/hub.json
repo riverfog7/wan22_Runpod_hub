@@ -1,8 +1,8 @@
 {
-    "title": "Flux_kontext_Runpod_hub",
-    "description": "FLUX.1 Kontext is a suite of generative flow matching models that allow you to generate and edit images.",
+    "title": "wan2.2",
+    "description": "wan2.2",
     "type": "serverless",
-    "category": "image",
+    "category": "video",
     "iconUrl": "https://example.com/icon.png",
   
     "config": {
@@ -13,6 +13,12 @@
       "gpuIds": "ADA_24,ADA_32_PRO",
       "allowedCudaVersions": [
         "12.9", "12.8"
+      ],
+      "env" : [
+        {
+          "key": "CIVITAI_API_KEY",
+          "value": "civitai-api-key"
+        }
       ]
     }
 }

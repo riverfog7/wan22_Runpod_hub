@@ -119,14 +119,14 @@ def handler(job):
 
     prompt = load_workflow("/flux_kontext_example.json")
 
-    prompt["41"]["inputs"]["image"] = image_path
-    prompt["6"]["inputs"]["text"] = job_input["prompt"]
-    prompt["25"]["inputs"]["noise_seed"] = job_input["seed"]
-    prompt["26"]["inputs"]["guidance"] = job_input["guidance"]
-    prompt["27"]["inputs"]["width"] = job_input["width"]
-    prompt["27"]["inputs"]["height"] = job_input["height"]
-    prompt["30"]["inputs"]["width"] = job_input["width"]
-    prompt["30"]["inputs"]["height"] = job_input["height"]
+    prompt["260"]["inputs"]["image"] = image_path
+    prompt["246"]["inputs"]["value"] = job_input["prompt"]
+    prompt["396"]["inputs"]["noise_seed"] = job_input["seed"]
+    # prompt["26"]["inputs"]["guidance"] = job_input["guidance"]
+    prompt["296"]["inputs"]["value"] = job_input["width"]
+    prompt["297"]["inputs"]["value"] = job_input["height"]
+    prompt["332"]["inputs"]["width"] = job_input["width"] * 2
+    prompt["332"]["inputs"]["height"] = job_input["height"] * 2
 
     ws_url = f"ws://{server_address}:8188/ws?clientId={client_id}"
     logger.info(f"Connecting to WebSocket: {ws_url}")
