@@ -117,7 +117,7 @@ def handler(job):
         image_path = save_data_if_base64(image_input, task_id, "input_image.jpg")
     
 
-    prompt = load_workflow("/flux_kontext_example.json")
+    prompt = load_workflow("/wan22.json")
 
     prompt["260"]["inputs"]["image"] = image_path
     prompt["246"]["inputs"]["value"] = job_input["prompt"]
