@@ -68,9 +68,9 @@ def get_history(prompt_id):
     with urllib.request.urlopen(url) as response:
         return json.loads(response.read())
 
-def get_images(ws, prompt):
+def get_videos(ws, prompt):
     prompt_id = queue_prompt(prompt)['prompt_id']
-    output_images = {}
+    output_videos = {}
     while True:
         out = ws.recv()
         if isinstance(out, str):
@@ -85,18 +85,16 @@ def get_images(ws, prompt):
     history = get_history(prompt_id)[prompt_id]
     for node_id in history['outputs']:
         node_output = history['outputs'][node_id]
-        images_output = []
-        if 'images' in node_output:
-            for image in node_output['images']:
-                image_data = get_image(image['filename'], image['subfolder'], image['type'])
-                # bytes 객체를 base64로 인코딩하여 JSON 직렬화 가능하게 변환
-                if isinstance(image_data, bytes):
-                    import base64
-                    image_data = base64.b64encode(image_data).decode('utf-8')
-                images_output.append(image_data)
-        output_images[node_id] = images_output
+        videos_output = []
+        if 'gifs' in node_output:
+            for video in node_output['gifs']:
+                # fullpath를 이용하여 직접 파일을 읽고 base64로 인코딩
+                with open(video['fullpath'], 'rb') as f:
+                    video_data = base64.b64encode(f.read()).decode('utf-8')
+                videos_output.append(video_data)
+        output_videos[node_id] = videos_output
 
-    return output_images
+    return output_videos
 
 def load_workflow(workflow_path):
     with open(workflow_path, 'r') as file:
@@ -163,18 +161,14 @@ def handler(job):
             if attempt == max_attempts - 1:
                 raise Exception("웹소켓 연결 시간 초과 (3분)")
             time.sleep(5)
-    images = get_images(ws, prompt)
+    videos = get_videos(ws, prompt)
     ws.close()
 
     # 이미지가 없는 경우 처리
-    if not images:
-        return {"error": "이미지를 생성할 수 없습니다."}
+    for node_id in videos:
+        if videos[node_id]:
+            return {"video": videos[node_id][0]}
     
-    # 첫 번째 이미지 반환
-    for node_id in images:
-        if images[node_id]:
-            return {"image": images[node_id][0]}
-    
-    return {"error": "이미지를 찾을 수 없습니다."}
+    return {"error": "비디오를를 찾을 수 없습니다."}
 
 runpod.serverless.start({"handler": handler})
