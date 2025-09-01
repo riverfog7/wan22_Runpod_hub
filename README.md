@@ -112,10 +112,9 @@ The workflow is based on ComfyUI and includes all necessary nodes for Wan22 proc
 
 This project is based on the following original repository. All rights to the model and core logic belong to the original authors.
 
-*   **Wan22:** [https://github.com/Comfy-Org/Wan_2.2_ComfyUI_Repackaged](https://github.com/Comfy-Org/Wan_2.2_ComfyUI_Repackaged)
+*   **Wan22:** [https://github.com/Wan-Video/Wan2.2](https://github.com/Wan-Video/Wan2.2)
 *   **ComfyUI:** [https://github.com/comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)
-*   **ComfyUI-KJNodes:** [https://github.com/kijai/ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
-*   **ComfyUI-VideoHelperSuite:** [https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite)
+*   **ComfyUI-WanVideoWrapper** [https://github.com/kijai/ComfyUI-WanVideoWrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 
 ## 📄 License
 

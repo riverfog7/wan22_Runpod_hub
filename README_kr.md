@@ -112,10 +112,9 @@ Base64로 인코딩된 파일을 직접 전송하는 대신 RunPod의 Network Vo
 
 이 프로젝트는 다음 원본 저장소를 기반으로 합니다. 모델과 핵심 로직에 대한 모든 권리는 원본 작성자에게 있습니다.
 
-*   **Wan22:** [https://github.com/Comfy-Org/Wan_2.2_ComfyUI_Repackaged](https://github.com/Comfy-Org/Wan_2.2_ComfyUI_Repackaged)
+*   **Wan22:** [https://github.com/Wan-Video/Wan2.2](https://github.com/Wan-Video/Wan2.2)
 *   **ComfyUI:** [https://github.com/comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)
-*   **ComfyUI-KJNodes:** [https://github.com/kijai/ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
-*   **ComfyUI-VideoHelperSuite:** [https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite)
+*   **ComfyUI-WanVideoWrapper** [https://github.com/kijai/ComfyUI-WanVideoWrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 
 ## 📄 라이선스
 
