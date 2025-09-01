@@ -1,5 +1,5 @@
 # Use specific version of nvidia cuda image
-FROM wlsdml1114/multitalk-base:1.3 as runtime
+FROM wlsdml1114/multitalk-base:1.4 as runtime
 
 WORKDIR /
 

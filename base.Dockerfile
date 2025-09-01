@@ -45,24 +45,8 @@ RUN git clone https://github.com/thu-ml/SageAttention.git
 WORKDIR /SageAttention
 RUN sed -i "/compute_capabilities = set()/a compute_capabilities = {\"$TORCH_CUDA_ARCH_LIST\"}" setup.py
 RUN python setup.py install
-
-WORKDIR /
-RUN git clone https://github.com/MeiGen-AI/MultiTalk.git
-WORKDIR /MultiTalk
-
-
-RUN pip install misaki[en]
-RUN pip install ninja 
-RUN pip install psutil 
-RUN pip install packaging 
 RUN pip install flash_attn==2.7.4.post1 --no-build-isolation
-RUN pip install -r requirements.txt
-RUN pip install librosa ffmpeg
-RUN pip uninstall -y transformers
-RUN pip install transformers==4.48.2
-RUN pip install runpod websocket-client
-RUN pip install -U "huggingface_hub[hf_transfer]"
 
 
-# #docker build -t wlsdml1114/multitalk-base:1.3 -f base.Dockerfile .
-# #docker push wlsdml1114/multitalk-base:1.3
+# #docker build -t wlsdml1114/multitalk-base:1.4 -f base.Dockerfile .
+# #docker push wlsdml1114/multitalk-base:1.4
