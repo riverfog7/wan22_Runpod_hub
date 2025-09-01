@@ -1,6 +1,6 @@
 {
-    "title": "wan2.2",
-    "description": "wan2.2",
+    "title": "Wan2.2",
+    "description": "Advanced AI model for generating high-quality videos from images with natural motion and realistic animations. Converts static images into dynamic videos using state-of-the-art image-to-video technology.",
     "type": "serverless",
     "category": "video",
     "iconUrl": "https://example.com/icon.png",
