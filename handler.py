@@ -117,7 +117,11 @@ def handler(job):
 
     prompt = load_workflow("/wan22.json")
 
+    
+    length = job_input.get("length", 81)
+
     prompt["260"]["inputs"]["image"] = image_path
+    prompt["303"]["inputs"]["value"] = length
     prompt["246"]["inputs"]["value"] = job_input["prompt"]
     prompt["396"]["inputs"]["noise_seed"] = job_input["seed"]
     # prompt["26"]["inputs"]["guidance"] = job_input["guidance"]
